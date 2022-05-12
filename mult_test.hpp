@@ -17,8 +17,7 @@ TEST(MultTest, MultTwoNonZerosStringify) {
     Base* leftVal = new Op (7.0);
     Base* rightVal = new Op (9.0);
     Base* test = new Mult(leftVal, rightVal);
-    string str = "*";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(7.000000 * 9.000000)");
 }
 
 TEST(MultTest, MultPosAndNeg) {
@@ -32,8 +31,7 @@ TEST(MultTest, MultPosAndNegStringify) {
     Base* leftVal = new Op (-7.0);
     Base* rightVal = new Op (15.0);
     Base* test = new Mult(leftVal, rightVal);
-    string str = "*";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(-7.000000 * 15.000000)");
 }
 
 TEST(MultTest, MultZeroAndNonZero) {
@@ -47,8 +45,7 @@ TEST(MultTest, MultZeroAndNonZeroStringify) {
     Base* leftVal = new Op (0.0);
     Base* rightVal = new Op (13.0);
     Base* test = new Mult(leftVal, rightVal);
-    string str = "*";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(0.000000 * 13.000000)");
 }
 
 TEST(MultTest, MultTwoNeg) { 
@@ -62,8 +59,7 @@ TEST(MultTest, MultTwoNegStringify) {
     Base* leftVal = new Op (-13.0);
     Base* rightVal = new Op (-3.0);
     Base* test = new Mult(leftVal, rightVal);
-    string str = "*";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(-13.000000 * -3.000000)");
 }
 
 #endif // __MULT_TEST_HPP__
