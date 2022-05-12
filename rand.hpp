@@ -14,8 +14,15 @@ class Rand : public Base {
 	    srand(time(0));
 	    this -> value = rand() % 100;
 	}
-        virtual double evaluate() { return this -> value;}
-        virtual string stringify() { return to_string(this -> value);}
+
+        virtual double evaluate() {
+	    return this -> value;
+	}
+
+        virtual string stringify() {
+	    string result = to_string(this -> value);
+	    return result;
+	}
 };
 
 #endif //__RAND_HPP__

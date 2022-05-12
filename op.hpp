@@ -10,9 +10,18 @@ class Op : public Base {
 	double value;
 
     public:
-        Op(double value) : Base() {this -> value = value;};
-        virtual double evaluate() { return this -> value;}
-        virtual string stringify() { return to_string(this -> value);}
+        Op(double value) : Base() {
+	    this -> value = value;
+	}
+
+        virtual double evaluate() {
+	    return this -> value;
+	}
+
+        virtual string stringify() {
+	    string result = to_string(this -> value);
+	    return result;
+	}
 };
 
 #endif //__OP_HPP__

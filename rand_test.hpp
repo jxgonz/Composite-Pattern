@@ -5,7 +5,7 @@
 
 using namespace std;
 
-TEST(OpTest, RandEvaluateRandNum) {
+TEST(RandTest, RandEvaluateRandNum) {
     Rand* test = new Rand();
     cout << test -> evaluate() << " == " << test -> stringify() << " == " << to_string(test -> evaluate()) << endl;
     EXPECT_EQ(test->stringify(), to_string(test->evaluate()));
