@@ -1,0 +1,44 @@
+me: CI
+
+on:
+
+  push:
+    branches: [ master, jgonz563/mock_tests ,jgonz563/op, jgonz563/rand, jgonz563/pow ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      
+      - name: Run submodule
+        run: git submodule update --init --recursive
+
+      
+      - name: Run cmake
+        run: cmake .
+
+      
+      - name: Run make
+        run: make
+
+     
+      - name: run test
+        run: ./test
+
+      
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
