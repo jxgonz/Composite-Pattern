@@ -10,15 +10,14 @@ TEST(SubTest, SubTwoNonZeros) {
     Base* leftVal = new Op (8.0);
     Base* rightVal = new Op (6.0);
     Base* test = new Sub(leftVal, rightVal);
-    EXPECT_DOUBLE_EQ(test->evaluate(), 14.0);
+    EXPECT_DOUBLE_EQ(test->evaluate(), 2.0);
 }
 
 TEST(SubTest, SubTwoNonZerosStringify) {
     Base* leftVal = new Op (8.0);
     Base* rightVal = new Op (6.0);
     Base* test = new Sub(leftVal, rightVal);
-    string str = "-";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(8.000000 - 6.000000)");
 }
 
 TEST(SubTest, SubPosAndNeg) {
@@ -32,8 +31,7 @@ TEST(SubTest, SubPosAndNegStringify) {
     Base* leftVal = new Op (-7.0);
     Base* rightVal = new Op (15.0);
     Base* test = new Sub(leftVal, rightVal);
-    string str = "-";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), "(-7.000000 - 15.000000)");
 }
 
 TEST(SubTest, SubZeroAndNonZero) {
@@ -47,8 +45,7 @@ TEST(SubTest, SubZeroAndNonZeroStringify) {
     Base* leftVal = new Op (0.0);
     Base* rightVal = new Op (13.0);
     Base* test = new Sub(leftVal, rightVal);
-    string str = "-";
-    EXPECT_EQ(test->stringify(), str);
+    EXPECT_EQ(test->stringify(), ("(0.000000 - 13.000000)"));
 }
 
 #endif // __SUB_TEST_HPP__
