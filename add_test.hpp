@@ -17,8 +17,7 @@ TEST(AddTest, AddTwoNonZerosStringify) {
     Base* leftVal = new Op (3.0);
     Base* rightVal = new Op (5.0);
     Base* test = new Add(leftVal, rightVal);
-    string stringy = "+";
-    EXPECT_EQ(test->stringify(), stringy);
+    EXPECT_EQ(test->stringify(), "(3.000000 + 5.000000)");
 }
 
 TEST(AddTest, AddPosAndNeg) {
@@ -32,10 +31,8 @@ TEST(AddTest, AddPosAndNegStringify) {
     Base* leftVal = new Op (-5.0);
     Base* rightVal = new Op (14.0);
     Base* test = new Add(leftVal, rightVal);
-    string stringy = "+";
-    EXPECT_EQ(test->stringify(), stringy);
+    EXPECT_EQ(test->stringify(), "(-5.000000 + 14.000000)");
 }
 
 
 #endif //__ADD_TEST_HPP__
-
