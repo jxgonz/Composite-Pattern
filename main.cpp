@@ -14,10 +14,7 @@ int main() {
     Base* four = new Op(4);
     Base* two = new Op(2);
 
-    //Base* mult = new Mult(seven, four);
     Base* div = new Div(four, two);
-    //Base* add = new Add(three, mult);
-    //Base* minus = new Sub(add, two);
     Base* power = new Pow(four, two);
 
     std::cout << div->stringify() << " = " << div->evaluate() << std::endl;
