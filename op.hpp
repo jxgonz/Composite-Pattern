@@ -1,13 +1,14 @@
 #ifndef __OP_HPP__
 #define __OP_HPP__
 #include <iostream>
-using namespace std;
 
 #include "base.hpp"
 
+using namespace std;
+
 class Op : public Base {
     private:
-	double value;
+        double value;
 
     public:
         Op(double value) : Base() {
