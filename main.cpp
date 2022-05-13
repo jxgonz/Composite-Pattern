@@ -13,7 +13,7 @@ int main() {
     Base* seven = new Op(7);
     Base* four = new Op(4);
     Base* two = new Op(2);
-
+    
     Base* div = new Div(four, two);
     Base* power = new Pow(four, two);
 
