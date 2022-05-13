@@ -4,7 +4,10 @@
 #include "op.hpp"
 #include "add.hpp"
 #include "sub.hpp"
-//#include "mult.hpp"
+#include "mult.hpp"
+#include "pow.hpp"
+#include "div.hpp"
+
 
 int main() {
     // This is a very basic main, and being able to correctly execute this main
@@ -14,14 +17,18 @@ int main() {
     Base* seven = new Op(7);
     Base* four = new Op(4);
     Base* two = new Op(2);
-    Base* add = new Add(three, three);
-   
-    //Base* mult = new Mult(seven, four);
-   
+
+    Base* mult = new Mult(seven, four);
+    Base* add = new Add(three, mult);
     Base* minus = new Sub(seven, two);
+    Base* div = new Div(four, two);
+    Base* power = new Pow(four, two);
+
     std::cout << add->stringify() << " = " << add->evaluate() << std::endl;
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
-   // std::cout << mult->stringify() << " = " << mult->evaluate() << std::endl;
+    std::cout << mult->stringify() << " = " << mult->evaluate() << std::endl;
+    std::cout << div->stringify() << " = " << div->evaluate() << std::endl;
+    std::cout << power->stringify() << " = " << power->evaluate() << std::endl;
 
     delete three;
     delete seven;
@@ -29,6 +36,10 @@ int main() {
     delete two;
     delete add;
     delete minus;
-   // delete mult;
+    delete mult;
+    delete div;
+    delete power;
+
+
     return 0;
 }
