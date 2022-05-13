@@ -1,10 +1,13 @@
 #include "gtest/gtest.h"
 
 #include "add_test.hpp"
-//#include "mult.hpp"
-//#include "div.hpp"
 #include "add.hpp"
-//#include "sub.hpp"
+
+#include "sub_test.hpp"
+#include "sub.hpp"
+
+//#include "mult_test.hpp"
+//#include "mult.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
